@@ -1,5 +1,7 @@
+using Codice.Client.Common;
 using System;
 using System.Collections.Generic;
+using UnityEngine.Assemblies;
 
 namespace MidtermExam.Prob01
 {
@@ -24,6 +26,27 @@ namespace MidtermExam.Prob01
         {
             // TODO: เขียนคำตอบแทนคำสั่ง throw exception ด้านล่าง
             throw new NotImplementedException();
+            if (alphabets == null || alphabets.Count == 0)
+            {
+                return 0;
+
+            }
+
+            int count = 0;
+            int size = alphabets.Count;
+
+            for(int i = 0; i < size; i++)
+            {
+                string current = alphabets.Dequeue();
+
+                if(current == "a" || current == "e" || current == "i" || current == "u")
+                {
+                    count++;
+                }
+                alphabets.Enqueue(current);
+
+            }
+            return count;
         }
     }
 }
